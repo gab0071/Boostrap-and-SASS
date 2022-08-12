@@ -1,0 +1,56 @@
+{
+  "name": "inviertedigital.co",
+  "version": "1.0.0",
+  "description": "proyecto digital",
+  "main": "(index.html)",
+  "scripts": {
+    "dev": "lite-server",
+    "start": "concurrently \"npm run watch:scss\" \"npm run dev\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
+    "clean": "rimraf dist",
+    "imagemin": "imagemin images/* --out-dir  dist/images",
+    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html && usemin inviertedigital.html -d dist --htmlmin -o dist/inviertedigital.html && usemin frasess.html -d dist --htmlmin -o dist/frases.html && usemin frasesmo.html -d dist --htmlmin -o dist/frasesmo.html && usemin quienes.html -d dist --htmlmin -o dist/quienes.html && usemin libros.html -d dist --htmlmin -o dist/libros.html && usemin living.html -d dist --htmlmin -o dist/living.html && usemin recetas.html -d dist --htmlmin -o dist/recetas.html && usemin business.html -d dist --htmlmin -o dist/business.html && usemin unomas-winner-que-es.html -d dist --htmlmin -o dist/unomas-winner-que-es.html && usemin series-y-peliculas.html -d dist --htmlmin -o dist/series-y-peliculas.html && usemin trendy.html -d dist --htmlmin -o dist/trendy.html && usemin cheat-meal.html -d dist --htmlmin -o dist/cheat-meal.html && usemin postre.html -d dist --htmlmin -o dist/postre.html && usemin redes-sociales.html -d dist --htmlmin -o dist/redes-sociales.html && usemin living(1).html -d dist --htmlmin -o dist/living(1).html && usemin nike.html -d dist --htmlmin -o dist/red-social.html && usemin nike.html -d dist --htmlmin -o dist/red-social.html && usemin empanadas.html -d dist --htmlmin -o dist/empanadas.html && usemin tik-tok.html -d dist --htmlmin -o dist/tik-tok.html ",
+    "build": "npm run clean && npm run scss && npm run imagemin && npm run usemin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gabmendez@bitbucket.org/gabmendez/inviertedigital.co.git"
+  },
+  "author": "gabmendez",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/gabmendez/inviertedigital.co#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.9",
+    "concurrently": "^5.2.0",
+    "copyfiles": "^2.3.0",
+    "cssmin": "^0.4.3",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-flatmap": "^1.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rev": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-usemin": "^0.3.30",
+    "htmlmin": "0.0.7",
+    "lite-server": "^2.5.4",
+    "node-sass": "^4.14.1",
+    "onchange": "^7.0.2",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "sas": "^3.0.4",
+    "uglifyjs": "^2.4.11",
+    "usemin-cli": "^0.6.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "bootstrap-scss": "^4.5.0",
+    "jquery": "^3.5.1",
+    "open-iconic": "^1.1.1",
+    "popper.js": "^1.16.1"
+  }
+}

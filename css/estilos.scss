@@ -1,0 +1,2265 @@
+$yellow: #feffc2;
+$green1: #9dfc03;
+$green:#659688;
+$blue: #b2d1bd;
+$white: #FFFFFF;
+$black: #0a0a0a;
+$purple: #a442f5;
+$red: #fa692f;
+$grey: #A59997;
+$g:#7E7D7D ;
+$v: #42f5ef;
+$a:#eda711;
+$a1: #f7a705;
+$v1: #d1ff05;
+
+@mixin margenes($top, $bottom){
+	margin-top: $top;
+	margin-bottom: $bottom;
+}
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 656px){ @content };
+}
+
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 900px){ @content };
+}
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 1199.98px){ @content };        
+
+    }
+} 
+@function dos-cuatro($numero, $color){
+     $text-shadow: 1px 1px #{$color};
+     @for $i from 1 through $numero{
+          $text-shadow: '#{$text-shadow: },
+                         #{$i}px #{$i}px #{$color}';
+     }
+     @return unquote($text-shadow);
+}
+
+.jumbotron{
+ background-color: $white;
+ color: $black;
+ margin-bottom: -30px;
+ @include margenes(10px, 0px);
+ padding-top: 0px;
+ @include responsive (phone) {
+    margin-left: 0px;
+ }
+
+}
+
+.buttom {
+  background-color: black;
+  color: white;
+}
+
+@keyframes rotacion {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(90deg);
+  }
+
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+.titulo-uno{
+  color: $v1;
+  text-shadow: dos-cuatro(8,$black);
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 2.8rem;
+  animation-name: rotacion;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.titulo-dos{
+   font-family: "Brush Script MT",  cursive;
+   font-size: 4rem; 
+   font-style: normal; 
+   font-variant: normal;
+   font-weight: 100;
+
+}
+
+.img{
+    width: 40%;
+    margin-left: 400px;
+    
+    @include responsive(phone) {
+         padding: 0px 10px 0px 10px;
+  }
+
+    @include responsive(tab-port) {
+         margin-left: 240px; 
+         margin-bottom: 3px;
+        
+    }
+
+}
+.biblia{
+    width: 50%;
+    margin-left: 315px;
+    @include responsive(phone) {
+        width: 100%;
+    }
+     @include responsive(tab-port) {
+        width: 80%;
+        margin-left: 35px;
+    }
+}
+.bibliauno{
+    width: 45%;
+    margin-left: 350px;
+    margin-right: 100px;
+     @include responsive(phone) {
+        width: 100%;
+        margin-right: 10px;
+        margin-left: 10px; }
+     @include responsive(tab-port) {
+        width: 70%;
+        margin-left: 55px;
+        margin-right: 25px;
+        align-content: center;
+        justify-content: center;
+      
+    }
+}
+.parrafo-uno{
+     font-style: initial;
+     font-family: -webkit-pictograph;
+     font-size: 1.5rem;
+}
+.parrafocuatro{
+     font-style: initial;
+     font-family: -webkit-pictograph;
+     font-size: 1.5rem;
+}
+.parrafo-dos{
+    font-style: italic;
+    font-family: -webkit-body;
+    font-size: 1.5rem;
+    margin-right: 180px;
+    margin-left: 180px;
+    @include responsive(tab-port) {
+         margin-left: 0px;
+         margin-right: 0px;
+         margin-bottom: 3px;
+     }
+
+     
+}
+.texto{
+    margin-left: 220px;
+    margin-right: 220px;
+    font-family: serif;
+    font-size: 1.6rem;
+    @include responsive(phone) {
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+    @include responsive(tab-port) {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
+.brand-style{
+    color: $black;
+    background-color: $white;
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+  
+  }
+ .navbar{
+  margin-left: 0px;
+  margin-right:  0px;
+  background-color: $white;
+  @include responsive (phone) {
+   background-color: $white;
+     margin-right: 5px;
+     margin-left: 5px;
+  }
+}
+
+nav .navbar-toggler {
+    background-color: $white;
+    border-color: $black;
+    color: $white;
+    outline-color: $black;
+    margin-bottom: 2px;
+      @include responsive (phone) {
+     margin-top: 0px;
+     padding-top: 1px;
+     padding-bottom: 4px;
+     margin-right: 120px;
+
+    }
+}
+.btn-primary{
+   background: $v1;
+   color: $black;
+   font-family: sans-serif;
+   font-size: 1.2rem;
+   font-weight: 700;
+   border-bottom-color: $black;
+   border-top-color: $black;
+   border-left-color: $black;
+   border-right-color: $black;
+   border-radius: 20px;
+   margin-left: 1100px;
+   padding-right: 20px;
+   padding-left: 20px;
+
+
+
+}
+
+
+.post{
+    font-family: "Brush Script MT",  cursive;
+    font-size: 3rem; 
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: 100px;
+    margin-left: 320px;
+    @include responsive(phone) {
+         margin-left: 100px;
+    }
+    @include responsive(tab-port) {
+         margin-left: 60px;
+         margin-bottom: 0px;
+
+    }
+}
+.dos{
+    margin-left: 250px;
+    margin-right: 250px;
+    font-size: 1.4rem;
+    @include responsive (phone) {
+        margin-right: 10px;
+        margin-left: 15px;
+    }
+}
+.card-img1{
+   height: 400px;
+   width: 100%;
+   padding-left: 10px;
+}
+
+.contenido{
+    align-content: center;
+    margin-right: 120px;
+    margin-left: 120px;
+    font-family: sans-serif;
+    justify-content: center;
+    @include responsive(phone) {
+        margin-right: 0px;
+        margin-left: 0px;
+
+    }
+
+}
+.card-body{
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    margin-left: 50px;
+    margin-right: 50px;
+    @include margenes(40px, 40px);
+    @include responsive(phone) {
+         flex:  1 1 auto;
+         padding: 0px 0px 0px 0px;
+         margin-left: 0px;
+         margin-right: 0px;
+         justify-content: center;
+    }
+    
+    @include responsive(tab-port) {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+
+    
+    
+}
+.card{
+    margin-right: 300px;
+    margin-left: 300px;
+    justify-content: center;
+    align-content: center;
+    flex-flow: row;
+    flex-direction: row;
+    @include responsive(phone) {
+         padding: 5px 0px 5px 0px;
+         margin-right: 0px;
+         margin-left: 0px;
+    }
+
+    @include responsive(tab-port) {
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        padding: 0px 50px 0px 50px;
+    }
+
+}
+
+.card-text {
+   @include responsive(phone) {
+    margin-left: 0px;
+    margin-right: 0px;
+   } 
+}
+
+
+.follow{
+ font-family: "Brush Script MT",  cursive;
+ font-size: 3rem; 
+ font-style: normal; 
+ font-variant: normal;
+ font-weight: 100;
+ @include responsive (phone) {
+  font-size: 2rem;
+  height: 20px;
+}
+} 
+
+
+
+.ultimo{
+   font-family: "Brush Script MT",  cursive;
+   font-size: 2rem; 
+   font-style: normal; 
+   font-variant: normal;
+   font-weight: 100;
+   margin-left: 200px;
+
+}
+.carousel-inner{
+    width: 20%;
+    height: auto; 
+    margin: auto;
+    @include margenes(0px ,10px);
+    align-items: center;
+    @include responsive (phone) {
+      width: 60%;
+
+    }
+}
+
+.btn {
+
+	background-color: $black;
+	color: $white;
+}
+
+.redes-sociales{
+    color: $black;
+    align-content: center;
+}
+
+
+ .formulario{
+    font-family: 'roboto';
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    @include responsive (phone) {
+        height: 700px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+
+}
+
+.forma{
+    text-align: center;
+    font-weight: 20px;
+    font-size: 33px;
+    margin-left: 0px;
+    margin-right: 0px;
+
+}
+.formauno{
+    text-align: center;
+    font-weight: 20px;
+    font-size: 33px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.tres{
+    font-size: 20px;
+}
+.form{
+    background-color: $white;
+    color: $black;
+    padding: 10px 0px;
+    box-shadow: 0 0 6px 0 $white;
+    border-radius: 10px;
+    width: 100%
+    
+}
+
+
+.libross {
+  width: 20%;
+  margin-left: 560px;
+  @include responsive(phone) {
+    width: 50%;
+    margin-left: 90px;
+  
+
+  }
+
+}
+.red{
+  width: 30%;
+  margin-left: 460px;
+    @include responsive(phone) {
+    width: 50%;
+    margin-left: 90px;}
+}
+.reduno{
+  width: 30%;
+  margin-left: 460px;
+   @include responsive(phone) {
+    width: 100%;
+    margin-right: 1px;
+    margin-left: 1px;
+    
+  }
+
+}
+.izquierda{
+  color: $black;
+  font-size: 1.7rem;
+}
+
+.derecha{  
+  color: $black;
+  font-size: 1.7rem;
+}
+.oi {
+  margin-left: 450px;
+   @include responsive (phone) {
+  margin-left: 105px;
+  }
+}
+.uno-dos{
+  margin-left: 660px;
+  @include responsive (phone) {
+   margin-left: 160px;
+  }
+}
+@keyframes heart{
+  0% {transform: scale(.8);}
+  50% {transform: scale(.9);}
+  100% {transform: scale(.6);}
+}
+.dos-dos{
+  animation-name: heart;
+  animation-duration:  4s;
+  animation-timing-function:  linear;
+  animation-iteration-count:  infinite;
+}
+
+.redes-flotantes{
+  position: fixed;
+  right: 120px;
+  top: 75%;
+  z-index: 10;
+  @include responsive (phone) {
+     right: 10px;
+     top: 70%;
+     position: fixed;
+     z-index: 40;
+  }
+ 
+}
+.redes-flotantes img{
+  float: right; clear: right;
+  margin: 10px;
+  -moz-transform: scale(.8) ;
+  -webkit-transform: scale(.8) ;
+  -o-transform: scale(.8) ;
+  -ms-transform: scale(.8) ;
+   transform: scale(.8) ;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  @include responsive (phone) {
+     margin: 2px;
+  }
+
+ 
+}
+.redes-flotantes img:hover {
+-moz-transform: scale(0.6) rotate(4deg);
+-webkit-transform: scale(0.6) rotate(4deg);
+-o-transform: scale(0.4) rotate(4deg);
+-ms-transform: scale(0.6) rotate(4deg);
+transform: scale(0.6) rotate(4deg);
+}
+
+.redes-sociales {
+  width: 40%;
+  margin-left: 420px;
+   @include responsive(phone) {
+    width: 50%;
+    margin-left: 90px;
+  }
+
+}
+.ejemplos{
+  width: 60%;
+  margin-left: 86px;
+  padding: 0px 2px 0px 2px;
+  @include responsive (phone) {
+    margin-left: 60px;
+    padding-top: 10px;
+
+  }
+}
+.ejemplos1{
+  width: 90%;
+  margin-left: 199px;
+   @include responsive (phone) {
+    margin-left: 10px;
+    padding-top: 20px;
+  }
+
+}
+.ejemplos2{
+  width: 70%;
+  margin-left: 150px;
+  margin-right: 10px;
+   @include responsive (phone) {
+    margin-left: 50px;
+    padding-top: 20px;
+  }
+}
+.ejemplos3{
+  width: 70%;
+  height: 280px;
+  margin-left: 20px;
+  @include responsive (phone) {
+    margin-left: 50px;
+    padding-top: 20px;
+  }
+}
+.ejemplos4{
+  width: 70%;
+  margin-left: 165px;
+  @include responsive (phone) {
+    margin-left: 50px;
+    padding-top: 20px;
+  }
+}
+.ejemplos5{
+ width: 80%;
+ margin-left: 55px;
+ @include responsive (phone) {
+    width: 70%;
+    margin-left: 50px;
+    padding-top: 20px;
+  }
+}
+.ejemplos6{
+ width: 60%;
+ height: 276px;
+ margin-left: -16px;
+  @include responsive (phone) {
+    width: 70%;
+    margin-left: 50px;
+    padding-top: 20px;
+  }
+}
+.ejemplos7{
+ width: 70%;
+ margin-left: 160px;
+ margin-top: -40px;
+  @include responsive (phone) {
+    width: 70%;
+    margin-left: 50px;
+    padding-top: 65px;
+  }
+}
+.ejemplos8 {
+ width: 80%;
+ height: 276px;
+ margin-left: 46px;
+ margin-top: 20px;
+ @include responsive (phone) {
+    width: 70%;
+    margin-left: 50px;
+  }
+}
+.ejemplos9 {
+  width: 60%;
+  height: 325px;
+  margin-top: -80px;
+  margin-left: -30px;
+  @include responsive (phone) {
+    width: 70%;
+    height: 360px;
+    margin-left: 50px;
+    padding-top: 100px;
+  }
+}
+.ejemplos10{
+ width: 70%;
+ margin-left: 150px;
+ margin-top: 40px;
+   @include responsive (phone) {
+    width: 70%;
+    margin-left: 50px;
+    
+  }
+}
+.ejemplos11{
+ width: 60%;
+  height: 325px;
+  margin-top: -20px;
+  margin-left: -10px;
+    @include responsive (phone) {
+    width: 70%;
+    margin-left: 50px;
+    padding-top: 40px;
+  }
+}
+
+.ejemplos13{
+  width: 80%;
+  height: 230px;
+  margin-left: 120px;
+  @include responsive (phone) {
+    width: 70%;
+    margin-left: 50px;
+    padding-top: 20px;
+  }
+}
+.ejemplos14{
+  width: 70%;
+  height: 280px;
+  margin-left: 30px;
+  @include responsive (phone) {
+    width: 70%;
+    margin-left: 50px;
+    padding-top: 20px;
+  }
+
+}
+.ejemplos15{
+  width: 80%;
+  height: 230px;
+  margin-left: -90px;
+   @include responsive (phone) {
+    width: 70%;
+    margin-left: 50px;
+    padding-top: 20px;
+  }
+}
+.ejemplos16{
+   width: 70%;
+   height: 325px;
+   margin-left: 120px;
+    @include responsive (phone) {
+    width: 70%;
+    margin-left: 50px;
+    padding-top: 20px;
+  }
+}
+.ejemplos17{
+   width: 70%;
+   height: 325px;
+   margin-left: -70px;
+  
+    @include responsive (phone) {
+    width: 70%;
+    margin-left: 50px;
+    padding-top: 20px;
+  }
+  }
+#veinte {
+  padding-right: 1px;
+}
+
+.numeros {
+  margin-left: 570px;
+  color: $g;
+  font-family: "Brush Script MT",  cursive;
+    font-size: 1.4rem; 
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: 20px;
+    @include responsive(phone) {
+      margin-left: 98px;
+    }
+}
+ .precioss {
+  color: $g;
+  margin-left: 460px;
+  @include responsive(phone) {
+    margin-left: 4px;
+    margin-right: 4px;
+  
+    
+  }
+ }
+ .tres {
+   font-size: 1.3rem;
+ }
+ .cuatro{
+  font-size: 1.3rem;
+  margin-left: 950px;
+   @include responsive (phone) {
+    margin-left: 220px;
+   }
+
+ }
+ .preciosuno{
+   color: $g;
+   margin-left: 520px;
+   @include responsive(phone) {
+    margin-left: 25px;
+   }
+}
+.winner{
+  color: $black;
+}
+.video {
+  margin-left: 360px;
+  @include responsive (phone) {
+    width: 90%;
+    margin-left: 17px;
+
+  
+
+  }
+}
+.cinco{
+  @include responsive (phone) {
+      font-size: 1.2rem;
+      margin-right: 0px;
+      margin-left: 0px;
+      align: center;
+      justify-content: center;
+  }
+}
+.uy {
+   @include responsive (phone) {
+    margin-left: 0px;
+    margin-right: 0px;
+   }
+}
+.nueve{
+  margin-left: 200px;
+  margin-right: 200px;
+  @include responsive (phone) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+.card-uno{
+  margin-left: 150px;
+  border: $g 1px solid;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-top: 10px;
+
+  @include responsive (phone) {
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    border: $g 1px solid;
+  }
+}
+.card-text-uno {
+   font-family: serif;
+   font-size: 1.3rem; 
+   font-style: normal; 
+   font-variant: normal;
+   font-weight: 0;
+ }
+.card-dos{
+  margin-right: 5px;
+  margin-left: 130px;
+  border: $g 1px solid;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-top: 10px;
+  @include responsive (phone) {
+    margin-left: 8px;
+    margin-right: 8px;
+    border: $g 1px solid;
+  }
+
+}
+.card-tres{
+  margin-left: 50px;
+  border: $g 1px solid;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-top: 10px;
+  @include responsive (phone) {
+    margin-left: 5px;
+    padding-right: 5px;
+    border: $g 1px solid;
+  }
+}
+.card-cuatro {
+  margin-left: 170px;
+  margin-right: 50px;
+  border: $g 1px solid;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-top: 10px;
+  @include responsive (phone) {
+    margin-left: 5px;
+    margin-right: 5px;
+    border: $g 1px solid;
+    margin-bottom: 20px;
+  }
+
+}
+.card-cinco {
+  margin-left: 370px;
+  margin-bottom: 20px; 
+  margin-top: 40px;
+  border: $g 1px solid;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-top: 10px; 
+  @include responsive (phone) {
+    margin-left: 5px;
+    margin-right: 5px;
+    border: $g 1px solid;
+  }
+    
+}
+.card-seis{
+  margin-right: -100px;
+  border: $g 1px solid;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-top: 10px; 
+}
+.card-img-ocho{
+  width: 110%;
+  height: 300px;
+  padding-left: 20px;
+  padding-right: 30px;
+}
+.card-img-top {
+  height: 380px;
+  @include responsive (phone) {
+    width: 80%;
+    margin-left: 25px;
+    margin-bottom: 10px;
+  }
+}
+.card-img-top1{
+  width: 60%;
+  margin-left: 70px;
+   @include responsive (phone) {
+    width: 60%;
+    margin-left: 55px;
+    margin-bottom: 10px;
+  }
+}
+.card-diez {
+  border: $grey 0.9px solid;
+  margin-left: 420px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  @include responsive (phone) {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+}
+.card-diez .card-img-cinco{
+  width: 220%;
+  height: 370px;
+   @include responsive (phone) {
+    width: 90%;
+    margin-left: 17px;
+   }
+
+}
+.card-img-seis{
+  width: 200%;
+  height: 370px;
+  @include responsive (phone) {
+    width: 90%;
+    margin-left: 17px;
+   }
+
+}
+
+ .card-text-dos {
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: $black;
+  margin-left: 190px;
+  @include responsive(phone) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+.card-text-tres{
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: $black;
+  margin-left: 160px;
+  @include responsive(phone) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+.card-title-dos{
+  margin-top: 20px;
+  margin-left: 190px;
+  color: $black;
+  @include responsive(phone) {
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+}
+.card-title-tres{
+  margin-top: 10px;
+  margin-left: 160px;
+   @include responsive(phone) {
+    margin-left: 40px;
+    margin-right: 10px;
+  }
+}
+.text-muted{
+  color: $black;
+  margin-left: 195px;
+  font-size: 1.2rem;
+   @include responsive(phone) {
+    margin-left: 80px;
+    margin-right: 10px;
+  }
+
+}
+.btn-group {
+  margin-left: 650px;
+  @include responsive (phone) {
+    margin-left: 150px;
+  }
+}
+.negro {
+  color: $white;
+}
+.winner1{
+  color: $g;
+}
+.dos-cuatro{
+  color: $a1;
+  text-shadow: dos-cuatro(8,$black);
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-left: 120px;
+  @include responsive (phone) {
+    margin-left: 20px;
+  }
+
+}
+.card-once{
+  width: 30%;
+  margin-left: 100px;
+   @include responsive (phone) {
+     width:90%; 
+     margin-left: 10px;
+   }
+
+}
+.card-once .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:100%; 
+     margin-left: 5px;
+
+  }
+}
+.card-once .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 776px;
+  margin-left: 90px;
+  @include responsive (phone) {
+    margin-top: 755px;
+    margin-left: 10px;
+
+  }
+}
+
+.card-once .card-text-cinco{
+  color: $white;
+  font-family: sans-serif;
+  font-size: 1rem;
+  margin-left: 90px;
+  @include responsive (phone) {
+    width: 90%;
+    margin-left: 10px;
+  }
+}
+.card-doce {
+  width: 50%;
+  margin-left: 580px;
+  margin-top: -540px;
+   @include responsive (phone) {
+     width:90%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-doce .card-img-101{
+  width: 100%;
+  height: 400px;
+   @include responsive (phone) {
+     width:100%; 
+     margin-left: 10px;
+ }
+
+}
+.card-img-overlay .card-title-seis{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 355px;
+  margin-left: 600px;
+  @include responsive (phone) {
+    
+     margin-left: 5px;
+     margin-top: 1185px;
+  }
+}
+.card-doce .card-text-seis{
+  color:  $white;
+  font-family: sans-serif;
+  font-size: 1rem;
+  margin-left: 600px;
+  @include responsive (phone) {
+     margin-left: 5px;
+  
+  }
+}
+.card-trece{
+  width: 30%;
+  margin-left: 20px;
+  @include responsive (phone) {
+     width:90%; 
+     margin-left: 15px;
+     margin-top: 5px;
+  
+  }
+ 
+}
+.card-trece .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:90%; 
+     margin-left: 15px;
+     margin-top: 5px;
+   }
+}   
+.card-trece .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1399px;
+  margin-left: 15px;
+  @include responsive (phone) {
+     margin-top: 1590px;
+  }
+}
+
+.card-trece .card-text-cinco {
+  margin-left: 10px;
+
+}
+.card-catorce{
+   width: 30%;
+   margin-left: 470px;
+   margin-top: -490px;
+    @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+  }
+ 
+}
+.card-catorce .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;}
+}
+.card-catorce .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1026px;
+  margin-left: 480px;
+  @include responsive (phone) {
+     margin-left: 5px;
+     margin-top: 2160px;
+  }
+}
+
+.card-catorce .card-text-cinco {
+  margin-left: 480px;
+  @include responsive (phone) {
+    margin-left: 5px;
+  }
+}
+
+.card-quince{
+  width: 30%;
+   margin-left: 920px;
+   margin-top: -590px;
+    @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+ 
+}
+.card-quince .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-quince .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1400px;
+  margin-left: 910px;
+  @include responsive (phone) {
+     margin-left: 5px;
+     margin-top: 3060px;
+  }
+}
+
+.card-quince .card-text-cinco {
+  margin-left: 910px;
+  @include responsive (phone) {
+   margin-left: 5px;
+  }
+
+
+}
+.card-deceocho{
+  width: 30%;
+  margin-left: 20px;
+   @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+  }
+ 
+}
+.card-deceocho .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-deceocho .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1840px;
+  margin-left: 15px;
+  margin-right: 1000px;
+  @include responsive (phone) {
+     margin-left: 5px;
+     margin-top: 3450px;
+     font-family: sans-serif;
+     font-weight: 700;
+     font-size: 1.6rem;
+  }
+}
+
+.card-deceocho .card-text-cinco {
+  margin-left: 15px;
+  @include responsive (phone) {
+    margin-left: 5px;
+  }
+
+}
+.card-dice{
+  width: 30%;
+  margin-left: 470px;
+ margin-top: -490px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+  }
+}
+.card-dice .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-dice .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1840px;
+  margin-left: 480px;
+  margin-right: 860px;
+  @include responsive (phone) {
+    margin-left: 10px;
+    margin-top: 4050px;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+
+  }
+}
+
+.card-dice .card-text-cinco {
+  margin-left: 480px;
+  @include responsive (phone) {
+    margin-left: 1px;
+  }
+
+}
+.card-sete{
+  width: 30%;
+   margin-left: 920px;
+   margin-top: -590px;
+    @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+  }
+ 
+}
+.card-sete .card-img-100{
+  width: 100%;
+  height: 520px;
+    @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-sete .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1882px;
+  margin-left: 910px;
+  margin-right: 10px;
+  @include responsive (phone) {
+   margin-left: 5px;
+   margin-top: 4600px;
+  }
+}
+
+.card-sete .card-text-cinco {
+  margin-left: 910px;
+  @include responsive (phone) {
+    margin-left: 5px;
+
+  }
+
+
+}
+.card-decenovo{
+  width: 30%;
+  margin-left: 20px;
+   @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+  }
+}
+.card-decenovo .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  } 
+}
+.card-decenovo .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 2490px;
+  margin-left: 15px;
+  margin-right: 1000px;
+  @include responsive (phone) {
+     margin-left: 5px;
+     margin-top: 5283px;
+  }
+}
+
+.card-decenovo .card-text-cinco {
+  margin-left: 15px;
+
+}
+.card-diceuno{
+  width: 30%;
+  margin-left: 470px;
+ margin-top: -490px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+  }
+}
+.card-diceuno .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-diceuno .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 2200px;
+  margin-left: 480px;
+  margin-right: 860px;
+  @include responsive (phone) {
+    margin-top: 5470px;
+    margin-left: 5px;
+
+  }
+}
+
+.card-diceuno .card-text-cinco {
+  margin-left: 480px;
+  @include responsive (phone) {
+    margin-left: 5px;
+  }
+
+}
+.card-seteuno{
+  width: 30%;
+   margin-left: 920px;
+   margin-top: -590px;
+    @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-seteuno .card-img-100{
+  width: 100%;
+  height: 520px;
+ @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-seteuno .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 2176px;
+  margin-left: 910px;
+  margin-right: 10px;
+  @include responsive (phone) {
+     margin-top: 6360px;
+     margin-left: 10px;
+  }
+}
+
+.card-seteuno .card-text-cinco {
+  margin-left: 910px;
+  @include responsive (phone) {
+    margin-left: 10px;
+  }
+
+
+}
+.w {
+  color: $white;
+}
+
+
+.card-decenueve{
+  width: 30%;
+  margin-left: 20px;
+   @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-decenueve .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-decenueve .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 3060px;
+  margin-left: 35px;
+  margin-right: 960px;
+  @include responsive (phone) {
+    margin-left: 15px;
+    margin-top: 6690px;
+
+  }
+}
+
+.card-decenueve .card-text-cinco {
+  color: $white;
+  margin-left: 35px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+}
+.card-dicedos{
+  width: 30%;
+  margin-left: 470px;
+ margin-top: -490px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-dicedos .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-dicedos .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 2780px;
+  margin-left: 480px;
+  margin-right: 860px;
+  @include responsive (phone) {
+   margin-top: 7174px;
+   margin-left: 15px;
+  }
+}
+
+.card-dicedos .card-text-cinco {
+  margin-left: 480px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+}
+.card-setedos{
+  width: 30%;
+   margin-left: 920px;
+   margin-top: -590px;
+    @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+ 
+}
+.card-setedos .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-setedos .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 3045px;
+  margin-left: 910px;
+  margin-right: 90px;
+  @include responsive (phone) {
+    margin-top: 7920px;
+    margin-left: 15px;
+
+  }
+}
+
+.card-setedos .card-text-cinco {
+  margin-left: 910px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+
+}
+.card-dicetres{
+  width: 30%;
+  margin-left: 470px;
+  margin-top: 50px;
+   @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-dicetres .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-dicetres .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 3730px;
+  margin-left: 480px;
+  margin-right: 560px;
+   @include responsive (phone) {
+     margin-left: 15px;
+     margin-top: 8500px;
+  }
+}
+
+.card-dicetres .card-text-cinco {
+  margin-left: 480px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+}
+.card-desocho {
+  width: 30%;
+  margin-left: 100px;
+   @include responsive (phone) {
+     width:94%; 
+     margin-left: 10px;
+   }
+
+}
+.card-desocho .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:94%; 
+     margin-left: 10px;
+
+  }
+}
+.card-desocho .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 750px;
+  margin-left: 90px;
+  margin-right: 900px;
+  @include responsive (phone) {
+    margin-top: 720px;
+    margin-left: 10px;
+    margin-right: 40px;
+
+  }
+}
+
+.card-desocho .card-text-cinco{
+  color: $white;
+  font-family: sans-serif;
+  font-size: 1rem;
+  margin-left: 90px;
+  @include responsive (phone) {
+    width: 90%;
+    margin-left: 10px;
+  }
+}
+.card-v{
+  width: 30%;
+  margin-left: 20px;
+   @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-v .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-v .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1270px;
+  margin-left: 25px;
+  margin-right: 960px;
+  @include responsive (phone) {
+    margin-right: 20px;
+    margin-left: 15px;
+    margin-top: 1280px;
+
+  }
+}
+
+.card-v .card-text-cinco {
+  color: $white;
+  margin-left: 35px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+}
+.card-vi{
+  width: 30%;
+  margin-left: 470px;
+  margin-top: -490px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-vi .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-vi .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 990px;
+  margin-left: 480px;
+  margin-right: 860px;
+  @include responsive (phone) {
+   margin-top: 1495px;
+   margin-left: 15px;
+  }
+}
+
+.card-vi .card-text-cinco {
+  margin-left: 480px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+}
+.card-vii{
+  width: 30%;
+   margin-left: 920px;
+   margin-top: -590px;
+    @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+    }
+}
+.card-vii .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-vii .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 955px;
+  margin-left: 910px;
+  margin-right: 90px;
+  @include responsive (phone) {
+    margin-top: 2050px;
+    margin-left: 15px;
+
+  }
+}
+
+.card-vii .card-text-cinco {
+  margin-left: 910px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+}
+.card-viii{
+  width: 30%;
+  margin-left: 210px;
+   @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-viii .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-viii .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 700px;
+  margin-left: 205px;
+  margin-right: 782px;
+  @include responsive (phone) {
+    margin-right: 50px;
+    margin-left: 15px;
+    margin-top: 695px;
+    font-size: 1.5rem;
+
+  }
+}
+
+.card-viii .card-text-cinco {
+  color: $white;
+  margin-left: 205px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+}
+.card-iv{
+  width: 30%;
+  margin-left: 720px;
+  margin-top: -490px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-iv .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-iv .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 378px;
+  margin-left: 710px;
+  margin-right: 360px;
+  @include responsive (phone) {
+   margin-top: 1295px;
+   margin-left: 15px;
+   margin-right: 20px;
+  }
+}
+
+.card-iv .card-text-cinco {
+  margin-left: 710px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+}
+.card-iiv{
+  width: 30%;
+  margin-left: 20px;
+  margin-top: 30px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-iiv .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-iiv .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1390px;
+  margin-left: 10px;
+  margin-right: 897px;
+  @include responsive (phone) {
+   margin-top: 1855px;
+   margin-left: 15px;
+   margin-right: 10px;
+  }
+}
+
+.card-iiv .card-text-cinco {
+  margin-left: 20px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+}
+.card-iiiv{
+  width: 30%;
+   margin-left: 470px;
+   margin-top: -590px;
+    @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+    }
+}
+.card-iiiv .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-iiiv .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-top: 1015px;
+  margin-left: 460px;
+  margin-right: 80px;
+  @include responsive (phone) {
+    margin-top: 2150px;
+    margin-left: 15px;
+
+  }
+}
+
+.card-iiiv .card-text-cinco {
+  margin-left: 470px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+}
+.card-vv{
+  width: 30%;
+  margin-top: -510px;
+  margin-left: 920px;
+   @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-vv .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-vv .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1090px;
+  margin-left: 915px;
+  margin-right: 60px;
+  @include responsive (phone) {
+    margin-right: 20px;
+    margin-left: 15px;
+    margin-top: 2690px;
+
+  }
+}
+
+.card-vv .card-text-cinco {
+  color: $white;
+  margin-left: 915px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+}
+.card-iiv{
+  width: 30%;
+  margin-left: 20px;
+  margin-top: 30px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-iiv .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-iiv .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1390px;
+  margin-left: 10px;
+  margin-right: 897px;
+  @include responsive (phone) {
+   margin-top: 1855px;
+   margin-left: 15px;
+   margin-right: 10px;
+  }
+}
+
+.card-iiv .card-text-cinco {
+  margin-left: 20px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+}
+.card-vvi{
+  width: 30%;
+   margin-left: 170px;
+   margin-top: 20px;
+    @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+    }
+}
+.card-vvi .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-vvi .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-top: 2115px;
+  margin-left: 160px;
+  margin-right: 80px;
+  @include responsive (phone) {
+    margin-top: 3350px;
+    margin-left: 15px;
+
+  }
+}
+
+.card-vvi .card-text-cinco {
+  margin-left: 160px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+}
+.card-vvii{
+  width: 30%;
+  margin-top: -544px;
+  margin-left: 670px;
+   @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-vvii .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-vvii .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 1690px;
+  margin-left: 675px;
+  margin-right: 60px;
+  @include responsive (phone) {
+    margin-right: 20px;
+    margin-left: 15px;
+    margin-top: 4240px;
+
+  }
+}
+
+.card-vvii .card-text-cinco {
+  color: $white;
+  margin-left: 675px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+}
+.card-vviii{
+  width: 30%;
+   margin-left: 170px;
+   margin-top: 20px;
+    @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+    }
+}
+.card-vviii .card-img-100{
+  width: 100%;
+  height: 520px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-vviii .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-top: 2715px;
+  margin-left: 160px;
+  margin-right: 780px;
+  @include responsive (phone) {
+    margin-top: 4830px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+  }
+}
+
+.card-vviii .card-text-cinco {
+  margin-left: 160px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+}
+.card-vviv{
+  width: 30%;
+  margin-top: -544px;
+  margin-left: 670px;
+   @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-vviv .card-img-100{
+  width: 100%;
+  height: 510px;
+  @include responsive (phone) {
+     width:93%; 
+     margin-left: 10px;
+     margin-top: 5px;
+
+  }
+}
+.card-vviv .card-title-cinco{
+  color: $white;
+  text-shadow: -3px -2px 1px $black;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 2390px;
+  margin-left: 675px;
+  margin-right: 60px;
+  @include responsive (phone) {
+    margin-right: 20px;
+    margin-left: 15px;
+    margin-top: 5140px;
+
+  }
+}
+
+.card-vviv .card-text-cinco {
+  color: $white;
+  margin-left: 675px;
+  @include responsive (phone) {
+    margin-left: 15px;
+  }
+
+}
+
+footer {
+    background-color: $white;
+    color: black;
+}
+
+
+
+	

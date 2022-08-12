@@ -1,0 +1,66 @@
+.jumbotron{
+ background-color: white;
+ color: black;
+ padding-top: 0;
+
+}
+.titulo-uno{
+
+    font-style: initial;
+    font-family: cursive;
+    font-size: 3rem;
+}
+
+.parrafo-uno{
+     font-style: initial;
+     font-family: -webkit-pictograph;
+     font-size: 1.5rem;
+}
+.brand-style{
+    color: white;
+    background-color: white;
+
+}
+.img-fluid{
+		max-width: 100%;
+		height: auto;
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+}
+
+.btn{
+
+	background-color: black;
+	color: white;
+}
+
+
+    
+
+body{
+
+	background-color: white;
+    color: black;
+    margin-bottom: : 0px;
+    margin-top: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+
+}
+.images-inicio{
+    width: 100%;
+    height: 50%;
+}
+
+
+ footer {
+    
+    background-color: white;
+    color: black;
+    margin-bottom: : 0px;
+    margin-top: 30px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+	
